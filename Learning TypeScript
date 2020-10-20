@@ -1,0 +1,25 @@
+## Setting up your Directories
+If you’re writing in plain JavaScript, it’s likely that you’re running your JavaScript directly, where your .js files are in a src, lib, or dist directory, and then ran as desired.
+
+If that’s the case, the files that you’ve written are going to be used as inputs to TypeScript, and you’ll run the outputs it produces. During our JS to TS migration, we’ll need to separate our input files to prevent TypeScript from overwriting them. 
+If your output files need to reside in a specific directory, then that will be your output directory.
+
+projectRoot
+├── src
+│   ├── file1.js
+│   └── file2.js
+├── built
+└── tsconfig.json
+
+
+## Early Benefits
+Even at this point you can get some great benefits from TypeScript understanding your project. If you open up an editor like VS Code or Visual Studio, you’ll see that you can often get some tooling support like completion. You can also catch certain bugs with options like:
+
+noImplicitReturns which prevents you from forgetting to return at the end of a function.
+noFallthroughCasesInSwitch which is helpful if you never want to forget a break statement between cases in a switch block.
+
+
+## Moving to TypeScript Files
+At this point, you’re probably ready to start using TypeScript files. The first step is to rename one of your .js files to .ts. If your file uses JSX, you’ll need to rename it to .tsx.
+
+Finished with that step? Great! You’ve successfully migrated a file from JavaScript to TypeScript!
