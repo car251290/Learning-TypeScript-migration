@@ -23,3 +23,15 @@ noFallthroughCasesInSwitch which is helpful if you never want to forget a break 
 At this point, you’re probably ready to start using TypeScript files. The first step is to rename one of your .js files to .ts. If your file uses JSX, you’ll need to rename it to .tsx.
 
 Finished with that step? Great! You’ve successfully migrated a file from JavaScript to TypeScript!
+
+And, for pre-ES2015 code, it can be used to simulate static methods:
+// function Outer
+function Outer() {
+  this.y = 2;
+}
+//Function Inner 
+Outer.Inner = function () {
+  this.yy = 2;
+};
+
+Outer.innter();
