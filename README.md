@@ -41,3 +41,46 @@ Type 'boolean' is not assignable to type 'number'.
   //Boleean true
     this.methodOnly = true; 
   }
+null, undefined, and empty array initializers are of type any or any[]
+Any variable, parameter or property that is initialized with null or undefined will have type any, even if strict null checks is turned on. Any variable, parameter or property that is initialized with [] will have type any[], even if strict null checks is turned on. The only exception is for properties that have multiple initializers as described above.
+
+function Foo(i = null) {
+  if (!i) i = 1;
+  var j = undefined;
+  j = 2;
+  this.l = [];
+}
+
+var foo = new Foo();
+foo.l.push(foo.i);
+foo.l.push("end");Try
+Function parameters are optional by default
+Since there is no way to specify optionality on parameters in pre-ES2015 Javascript, all function parameters in .js file are considered optional. Calls with fewer arguments than the declared number of parameters are allowed.
+
+It is important to note that it is an error to call a function with too many arguments.
+
+For instance:
+
+function bar(a, b) {
+  console.log(a + " " + b);
+}
+
+bar(1); // OK, second argument considered optional
+bar(1, 2);
+bar(1, 2, 3); // Error, too many arguments
+Expected 0-2 arguments, but got 3.
+Expected 0-2 arguments, but got 3.
+Try
+JSDoc annotated functions are excluded from this rule. Use JSDoc optional parameter syntax ([ ]) to express optionality. e.g.:
+
+/**
+ * @param {string} [somebody] - Somebody's name.
+ */
+function sayHello(somebody) {
+  if (!somebody) {
+    somebody = "John ";
+  }
+  console.log("Hello " + somebody);
+}
+
+sayHello();
