@@ -23,7 +23,16 @@ TypeScript may offer you errors which you disagree with, in those cases you can 
 ES2015 does not have a means for declaring properties on classes. Properties are dynamically assigned, just like object literals.
 
 In a .js file, the compiler infers properties from property assignments inside the class body. The type of a property is the type given in the constructor, unless it’s not defined there, or the type in the constructor is undefined or null. In that case, the type is the union of the types of all the right-hand values in these assignments. Properties defined in the constructor are always assumed to exist, whereas ones defined just in methods, getters, or setters are considered optional.
+## Enum
+A helpful addition to the standard set of datatypes from JavaScript is the enum. As in languages like C#, an enum is a way of giving more friendly names to sets of numeric values.
 
+enum Color {
+  Red,
+  Green,
+  Blue,
+}
+
+let c: Color = Color.Green;
 class Type {
   constructor() {
     this.constructorOnly = 0;
@@ -84,3 +93,23 @@ function sayHello(somebody) {
 }
 
 sayHello();
+
+## Index TypeScript
+Write a HTML page
+Right click on the wwwroot folder (if you don’t see the folder try building the project) and add a New Item named index.html inside. Use the following code for index.html
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <script src="scripts/app.js"></script>
+    <title></title>
+</head>
+<body>
+    <div id="message"></div>
+    <div>
+        Compiler: <input id="compiler" value="TypeScript" onkeyup="document.getElementById('message').innerText = sayHello()" /><br />
+        Framework: <input id="framework" value="ASP.NET" onkeyup="document.getElementById('message').innerText = sayHello()" />
+    </div>
+</body>
+</html>
