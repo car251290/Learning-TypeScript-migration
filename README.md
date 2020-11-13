@@ -8,7 +8,8 @@ The type system in TypeScript has different levels of strictness when working wi
 A type-system based only on inference with JavaScript code
 Incremental typing in JavaScript via JSDoc
 Using // @ts-check in a JavaScript file
-##TypeScript code
+
+## TypeScript code
 TypeScript with strict enabled
 Each step represents a move towards a safer type-system, but not every project needs that level of verification.
 
@@ -26,6 +27,7 @@ In a .js file, the compiler infers properties from property assignments inside t
 ## Enum
 A helpful addition to the standard set of datatypes from JavaScript is the enum. As in languages like C#, an enum is a way of giving more friendly names to sets of numeric values.
 
+## enum color
 enum Color {
   Red,
   Green,
@@ -97,7 +99,20 @@ sayHello();
 ## Index TypeScript
 Write a HTML page
 Right click on the wwwroot folder (if you don’t see the folder try building the project) and add a New Item named index.html inside. Use the following code for index.html
+## You can also import declarations from other files using import types. This syntax is TypeScript-specific and differs from the JSDoc standard:
+// @filename: types.d.ts
+export type Pet = {
+  name: string,
+};
 
+// @filename: main.js
+/**
+ * @param p { import("./types").Pet }
+ */
+function walk(p) {
+  console.log(`Walking ${p.name}...`);
+}
+## Html
 <!DOCTYPE html>
 <html>
 <head>
