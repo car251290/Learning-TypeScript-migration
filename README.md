@@ -97,8 +97,10 @@ function sayHello(somebody) {
 sayHello();
 
 ## Index TypeScript
+
 Write a HTML page
 Right click on the wwwroot folder (if you don’t see the folder try building the project) and add a New Item named index.html inside. Use the following code for index.html
+
 ## You can also import declarations from other files using import types. This syntax is TypeScript-specific and differs from the JSDoc standard:
 // @filename: types.d.ts
 export type Pet = {
@@ -113,6 +115,7 @@ function walk(p) {
   console.log(`Walking ${p.name}...`);
 }
 ## Html
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -128,3 +131,4 @@ function walk(p) {
     </div>
 </body>
 </html>
+
