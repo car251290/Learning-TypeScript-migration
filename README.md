@@ -16,6 +16,14 @@ Each step represents a move towards a safer type-system, but not every project n
 ## TypeScript with JavaScript
 This is when you use an editor which uses TypeScript to provide tooling like auto-complete, jump to symbol and refactoring tools like rename. The homepage has a list of editors which have TypeScript plugins.
 
+JavaScript and More
+
+TypeScript is an open-source language which builds on JavaScript, one of the world’s most used tools, by adding static type definitions.
+
+Types provide a way to describe the shape of an object, providing better documentation, and allowing TypeScript to validate that your code is working correctly.
+
+Writing types can be optional in TypeScript, because type inference allows you to get a lot of power without writing additional code.
+
 ## How to switch my code from JS to JTS
 If you have a lot of JavaScript files you want to add errors to then you can switch to using a jsconfig.json. You can skip checking some files by adding a // @ts-nocheck comment to files.
 
